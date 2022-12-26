@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "get_next_line_bonus.h"
 
 void	delete_node(int fd, t_bnode **bnode)

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
+/*   pf_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seunghoy <seunghoy@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 19:16:58 by seunghoy          #+#    #+#             */
-/*   Updated: 2022/12/19 14:07:30 by seunghoy         ###   ########.fr       */
+/*   Created: 2022/12/26 17:35:18 by seunghoy          #+#    #+#             */
+/*   Updated: 2022/12/26 17:38:45 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_BONUS_H
-# define FT_PRINTF_BONUS_H
+#ifndef PF_PRINTF_H
+# define PF_PRINTF_H
 # include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
 
 # define ERR_MALLOC -1
 # define ERR_RETURN_OVER -2
 # define ERR_WIDTH_OVER -3
 # define ERR_PRECISION_OVER -4
-# define ERR_WRITE -1
+# define ERR_WRITE -5
 # define BASE_D "0123456789"
 # define BASE_X "0123456789abcdef"
 # define BASE_X_CAP "0123456789ABCDEF"

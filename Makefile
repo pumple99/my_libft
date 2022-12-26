@@ -6,7 +6,7 @@
 #    By: seunghoy <seunghoy@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 16:45:12 by seunghoy          #+#    #+#              #
-#    Updated: 2022/12/19 14:00:49 by seunghoy         ###   ########.fr        #
+#    Updated: 2022/12/26 16:53:23 by seunghoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,39 +46,40 @@ SRCS = ft_isalpha.c \
        ft_putchar_fd.c \
        ft_putstr_fd.c \
        ft_putendl_fd.c \
-       ft_putnbr_fd.c
-
-SRCS_B = ft_lstnew_bonus.c \
-         ft_lstadd_front_bonus.c \
-         ft_lstsize_bonus.c \
-         ft_lstlast_bonus.c \
-         ft_lstadd_back_bonus.c \
-         ft_lstdelone_bonus.c \
-         ft_lstclear_bonus.c \
-         ft_lstiter_bonus.c \
-         ft_lstmap_bonus.c
+       ft_putnbr_fd.c \
+              ft_lstnew_bonus.c \
+              ft_lstadd_front_bonus.c \
+              ft_lstsize_bonus.c \
+              ft_lstlast_bonus.c \
+              ft_lstadd_back_bonus.c \
+              ft_lstdelone_bonus.c \
+              ft_lstclear_bonus.c \
+              ft_lstiter_bonus.c \
+              ft_lstmap_bonus.c \
+       get_next_line_bonus.c \
+       get_next_line_utils_bonus.c \
+              pf_printf.c \
+              pf_parse.c \
+              pf_len.c \
+              pf_len_conv.c \
+              pf_copy.c \
+              pf_copy_conv.c \
+              pf_copy_conv2.c
+       
 
 OBJS = $(SRCS:.c=.o)
-OBJS_B = $(SRCS_B:.c=.o)
-DEPS = $(OBJS:.o=.d) $(OBJS_B:.o=.d)
+DEPS = $(OBJS:.o=.d)
 
-all : $(OBJS)
+$(NAME) : $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
-	rm -f bonus
-	touch all
 
-$(NAME) : all
-
-bonus : $(OBJS) $(OBJS_B)
-	ar -rcs $(NAME) $(OBJS) $(OBJS_B)
-	rm -f all
-	touch bonus
+all : $(NAME)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c -I. -MMD $<
 
 clean :
-	rm -rf $(OBJS) $(OBJS_B) all bonus $(DEPS)
+	rm -rf $(OBJS) $(DEPS)
 
 fclean : clean
 	rm -rf $(NAME)
@@ -91,4 +92,4 @@ ifeq "$(filter clean fclean re,$(MAKECMDGOALS))" ""
 -include $(DEPS)
 endif
 
-.PHONY : clean fclean
+.PHONY : clean fclean re

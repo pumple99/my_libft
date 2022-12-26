@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
 #include "libft.h"
 
 static int	new_con_clear(t_list **start, void *new_con, void (*del)(void *), \

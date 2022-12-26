@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static int	get_itoa_len(long long nbr, int *is_minus)
+static int	ft_get_itoa_len(long long nbr, int *is_minus)
 {
 	int	len;
 
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 
 	nbr = (long long)n;
 	is_minus = 0;
-	size = get_itoa_len(nbr, &is_minus);
+	size = ft_get_itoa_len(nbr, &is_minus);
 	itoa_str = (char *)malloc(size + 1);
 	if (itoa_str == 0)
 		return (0);

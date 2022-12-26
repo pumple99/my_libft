@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <unistd.h>
 #include "get_next_line_bonus.h"
 
 static t_bnode	*find_or_new(int fd, t_bnode **bnode)

@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 13:55:35 by seunghoy          #+#    #+#             */
-/*   Updated: 2022/11/26 15:05:42 by seunghoy         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:52:44 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+#include <stddef.h>
 
 typedef struct s_bnode
 {

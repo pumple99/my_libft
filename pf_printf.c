@@ -16,7 +16,7 @@
 #include "pf_printf.h"
 #include "libft.h"
 
-static int	print_pf(char *print_str, int err, t_ull pf_len)
+static int	print_pf(int fd, char *print_str, int err, t_ull pf_len)
 {
 	int	re;
 
@@ -29,7 +29,7 @@ static int	print_pf(char *print_str, int err, t_ull pf_len)
 			re = ERR_RETURN_OVER;
 		else
 			re = (int)pf_len;
-		if (write(1, print_str, pf_len) < 0)
+		if (write(fd, print_str, pf_len) < 0)
 			re = ERR_WRITE;
 	}
 	free(print_str);
@@ -91,5 +91,29 @@ int	ft_printf(const char *format, ...)
 			err = copy_conv_str(&format, &temp, &ap);
 	}
 	va_end(ap);
-	return (print_pf(print_str, err, pf_len));
+	return (print_pf(1, print_str, err, pf_len));
+}
+
+int	fd_printf(int fd, const char *format, ...)
+{
+	va_list		ap;
+	char		*print_str;
+	char		*temp;
+	int			err;
+	t_ull		pf_len;
+
+	err = 0;
+	va_start(ap, format);
+	pf_len = get_pf_len(format, &ap, &err);
+	print_str = get_pf_str(pf_len, &err);
+	temp = print_str;
+	while (!err && *format)
+	{
+		if (*format != '%')
+			err = copy_plain_str(&format, &temp);
+		else
+			err = copy_conv_str(&format, &temp, &ap);
+	}
+	va_end(ap);
+	return (print_pf(fd, print_str, err, pf_len));
 }

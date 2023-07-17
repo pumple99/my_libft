@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: seunghoy <seunghoy@student.42seoul.kr>     +#+  +:+       +#+         #
+#    By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 16:45:12 by seunghoy          #+#    #+#              #
-#    Updated: 2023/01/13 21:05:22 by seunghoy         ###   ########.fr        #
+#    Updated: 2023/07/17 15:39:57 by seunghoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = ft_isalpha.c \
        ft_atoi.c \
        ft_isdigit.c \
        ft_memset.c \
+       ft_strcmp.c \
        ft_strncmp.c \
        ft_bzero.c \
        ft_isprint.c \
